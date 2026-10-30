@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Neon Arena | OOP Shooter</title>
+
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+
+  <body>
+    <main class="game-container">
+      <header class="header">
+        <h1>Neon Arena</h1>
+        <p>OBJECT-ORIENTED SHOOTER</p>
+      </header>
+
+      <section
+        class="hud"
+        aria-label="Game statistics"
+      >
+        <div class="hud-card">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+
+        <div class="hud-card">
+          <span>Lives</span>
+          <strong id="lives">3</strong>
+        </div>
+
+        <div class="hud-card">
+          <span>Wave</span>
+          <strong id="wave">1</strong>
+        </div>
+
+        <div class="hud-card">
+          <span>Enemies</span>
+          <strong id="enemy-count">0</strong>
+        </div>
+      </section>
+
+      <section class="canvas-wrapper">
+        <canvas
+          id="game-canvas"
+          width="800"
+          height="500"
+          aria-label="Neon Arena shooter game"
+        ></canvas>
+
+        <div
+          class="overlay"
+          id="overlay"
+        >
+          <h2 id="overlay-title">NEON ARENA</h2>
+
+          <p id="overlay-message">
+            Survive the enemy invasion.<br />
+            Move, aim, shoot, and conquer every wave.
+          </p>
+
+          <button
+            class="primary-button"
+            id="start-button"
+          >
+            START GAME
+          </button>
+        </div>
+      </section>
+
+      <div class="controls">
+        <button
+          class="control-button"
+          id="pause-button"
+        >
+          ⏸ Pause
+        </button>
+
+        <button
+          class="control-button"
+          id="restart-button"
+        >
+          ↻ Restart
+        </button>
+      </div>
+
+      <section class="mobile-controls">
+        <div class="direction-pad">
+          <button
+            class="touch-button up"
+            data-key="ArrowUp"
+          >
+            ▲
+          </button>
+
+          <button
+            class="touch-button left"
+            data-key="ArrowLeft"
+          >
+            ◀
+          </button>
+
+          <button
+            class="touch-button down"
+            data-key="ArrowDown"
+          >
+            ▼
+          </button>
+
+          <button
+            class="touch-button right"
+            data-key="ArrowRight"
+          >
+            ▶
+          </button>
+        </div>
+
+        <button
+          class="touch-button fire-button"
+          id="fire-button"
+        >
+          FIRE
+        </button>
+      </section>
+
+      <footer class="instructions">
+        <p class="desktop-only">
+          <strong>MOVE:</strong> WASD / Arrow Keys &nbsp; | &nbsp;
+          <strong>SHOOT:</strong> Space &nbsp; | &nbsp;
+          <strong>PAUSE:</strong> P
+        </p>
+
+        <p>Built with Vanilla JavaScript, HTML Canvas, and OOP.</p>
+      </footer>
+    </main>
+
+    <script
+      src="main.js"
+      type="module"
+    ></script>
+  </body>
+</html>
