@@ -3,7 +3,6 @@ import { InputManager } from './InputManager.js';
 import { Enemy } from './Enemy.js';
 import { Player } from './Player.js';
 import { overlay, overlayMessage, overlayTitle } from '../dom/references.js';
-
 import {
   startButton,
   restartButton,
@@ -13,6 +12,9 @@ import {
   waveElement,
   enemyCountElement,
 } from '../dom/references.js';
+
+const kill = new Audio('../assets/audio/explode.wav');
+const gameOver = new Audio('../assets/audio/gameOver.mp3');
 
 export class Game {
   constructor(canvas, context) {
@@ -186,9 +188,9 @@ export class Game {
         }
 
         if (bullet.collidesWith(enemy)) {
+          kill.play();
           bullet.destroy();
           enemy.destroy();
-
           this.score += enemy.scoreValue;
 
           break;
@@ -303,6 +305,7 @@ export class Game {
     }
 
     this.state = 'gameover';
+    gameOver.play();
 
     if (this.animationId !== null) {
       cancelAnimationFrame(this.animationId);

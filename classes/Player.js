@@ -1,6 +1,11 @@
 import { CONFIG } from '../config/config.js';
 import { Entity } from './Entity.js';
 import { Bullet } from './Bullet.js';
+
+// load sounds
+const shoot = new Audio('../assets/audio/shoot.wav');
+const enemyShot = new Audio('../assets/audio/enemyShoot.wav');
+
 export class Player extends Entity {
   constructor(x, y, input) {
     super(x, y, CONFIG.PLAYER_SIZE, CONFIG.PLAYER_COLOR);
@@ -29,6 +34,7 @@ export class Player extends Entity {
 
     if (this.input.isDown('Space') && this.shootCooldown === 0) {
       this.shoot(game);
+      shoot.play();
     }
   }
 
@@ -89,6 +95,7 @@ export class Player extends Entity {
     }
 
     this.lives -= 1;
+    enemyShot.play();
 
     this.invulnerabilityTimer = this.invulnerabilityDuration;
 

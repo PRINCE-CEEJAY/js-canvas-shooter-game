@@ -2,7 +2,7 @@ export const CONFIG = Object.freeze({
   WIDTH: 800,
   HEIGHT: 500,
 
-  PLAYER_SPEED: 260,
+  PLAYER_SPEED: 500,
   PLAYER_SIZE: 18,
 
   BULLET_SPEED: 480,
